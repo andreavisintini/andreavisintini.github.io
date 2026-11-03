@@ -1,27 +1,31 @@
 /* ========================================================================
-   PUBLICATIONS
-   Compact, bibliography-inspired styling for the publications page.
+   PUBLICATIONS AND TALKS
+   Compact, journal-inspired academic lists.
    ======================================================================== */
 
-.academic-list--publications {
-  .publication-section {
-    margin: 0 0 1.4em;
+.academic-list--publications,
+.academic-list--talks {
+  .publication-section,
+  .talk-section {
+    margin: 0 0 1.1em;
   }
 
-  .publication-section__title {
-    margin: 1.2em 0 0.35em;
-    padding-bottom: 0.35em;
+  .publication-section__title,
+  .talk-section__title {
+    margin: 1.1em 0 0.25em;
+    padding-bottom: 0.25em;
     color: var(--global-text-color-light);
     border-bottom: 1px solid var(--global-border-color);
     font-size: $type-size-5;
     font-weight: 600;
-    letter-spacing: 0.045em;
+    letter-spacing: 0.035em;
     text-transform: none;
   }
 
-  .publication-entry {
+  .publication-entry,
+  .talk-entry {
     margin: 0;
-    padding: 0.45em 0 0.55em;
+    padding: 0.35em 0 0.4em;
     border-bottom: 1px solid var(--global-border-color);
 
     &:last-child {
@@ -29,7 +33,7 @@
     }
 
     .archive__item-title {
-      margin: 0 0 0.1em;
+      margin: 0 0 0.08em;
       font-family: Georgia, "Times New Roman", serif;
       font-size: $type-size-6;
       font-weight: 600;
@@ -40,20 +44,61 @@
         text-underline-offset: 0.15em;
       }
     }
+  }
+}
 
-    .page__meta {
-      margin: 0;
-      color: var(--global-text-color-light);
-      font-size: $type-size-6;
-      line-height: 1.45;
-    }
+.academic-list--publications {
+  .publication-entry .page__meta {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+    line-height: 1.4;
   }
 
   .publication-section:first-child .publication-section__title {
-    margin-top: 0.5em;
+    margin-top: 0.45em;
   }
 
   .publication-section:last-child {
     margin-bottom: 0;
+  }
+}
+
+.academic-list--talks {
+  .talk-section__title {
+    margin-top: 1em;
+  }
+
+  .talk-section:first-child .talk-section__title {
+    margin-top: 0.45em;
+  }
+
+  .talk-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .talk-entry__event {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+    line-height: 1.35;
+  }
+
+  .talk-entry__details {
+    margin: 0.12em 0 0;
+    color: var(--global-text-color);
+    font-size: $type-size-6;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .talk-entry__location {
+    font-weight: 600;
+  }
+
+  .talk-entry__label {
+    color: var(--global-text-color-light);
+    font-style: italic;
+    font-weight: 400;
   }
 }
