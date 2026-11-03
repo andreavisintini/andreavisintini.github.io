@@ -16,4 +16,61 @@ Specifically, my research focuses on modality and persistence. I am writing a Ph
 
 I am a football fan (I unfortunately support Udinese), and also a Formula1 fan (I unfortunately support Ferrari).
 
-I have an orange cat named <details style="display: inline-block; vertical-align: baseline;"><summary style="display: inline; cursor: pointer;">Macbeth</summary><img src="/images/Macbeth.JPG" alt="Macbeth" style="display: block; max-width: min(100%, 500px); height: auto; margin-top: 0.5em;"></details>.
+I have an orange cat named <span class="macbeth-reveal"><button class="macbeth-trigger" type="button" aria-expanded="false">Macbeth</button><img class="macbeth-image" src="/images/Macbeth.JPG" alt="Macbeth" /></span>.
+
+<style>
+  .macbeth-reveal {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  .macbeth-trigger {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-weight: 600;
+    color: #2a7ae2;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .macbeth-trigger:hover,
+  .macbeth-trigger:focus-visible {
+    color: #1d5fbf;
+    text-decoration: underline;
+    outline: none;
+  }
+
+  .macbeth-image {
+    display: none;
+    width: min(320px, 70vw);
+    margin-top: 0.7rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    background: white;
+  }
+
+  .macbeth-reveal.is-open .macbeth-image {
+    display: block;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggers = document.querySelectorAll('.macbeth-trigger');
+
+    triggers.forEach(function (trigger) {
+      const reveal = trigger.closest('.macbeth-reveal');
+      if (!reveal) return;
+
+      trigger.addEventListener('click', function () {
+        const isOpen = reveal.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+  });
+</script>
