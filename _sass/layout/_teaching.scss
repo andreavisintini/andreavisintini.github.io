@@ -1,0 +1,45 @@
+/* ========================================================================
+   TEACHING
+   Compact academic entries in the same style as publications and talks.
+   ======================================================================== */
+
+.academic-list--teaching {
+  .teaching-entry {
+    margin: 0;
+    padding: 0.4em 0 0.5em;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .teaching-entry:last-child {
+    border-bottom: 0;
+  }
+
+  .teaching-entry__title {
+    margin: 0 0 0.08em;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: $type-size-6;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--global-text-color);
+  }
+
+  .teaching-entry__meta,
+  .teaching-entry__role,
+  .teaching-entry__period {
+    margin: 0;
+    color: #315b78;
+    font-size: $type-size-6;
+    line-height: 1.4;
+  }
+
+  .teaching-entry__role {
+    margin-top: 0.18em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .teaching-entry__period {
+    margin-top: 0.12em;
+  }
+}
