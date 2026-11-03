@@ -12,8 +12,7 @@ I was a visiting scholar in New York City during the Spring Semester 2025, at CU
 
 I work primarily in metaphysics and philosophical logic.
 
-Specifically, my research focuses on modality and persistence. I am writing a PhD thesis on Noneist Five-dimensionalism: a theory that combine the view of modal metaphysics that possible worlds ar[...]
-
+Specifically, my research focuses on modality and persistence. I have written a PhD thesis on Actualist Five-dimensionalism: a theory that combines the view the only the actual world exists with the view that ordinary objects are five-dimensional entities extended across possible worlds.
 I am a football fan (I unfortunately support Udinese), and also a Formula1 fan (I unfortunately support Ferrari).
 
 I have an orange cat named <span class="macbeth-reveal"><button class="macbeth-trigger" type="button" aria-expanded="false">Macbeth</button><img class="macbeth-image" src="/images/Macbeth.JPG" alt="Macbeth" /></span>.
