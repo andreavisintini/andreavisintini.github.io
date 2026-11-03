@@ -2,18 +2,11 @@
   <h3 class="archive__item-title">
     {% if include.talk.invited %}<span class="talk-entry__label">Invited:</span> {% endif %}{{ include.talk.title | escape }}
   </h3>
-
-  {% if include.talk.event or include.talk.venue %}
-    <p class="talk-entry__event">
+  {% if include.talk.event or include.talk.venue or include.talk.location or include.talk.date %}
+    <p class="page__meta talk-entry__meta">
       {% if include.talk.event %}<em>{{ include.talk.event | escape }}</em>{% elsif include.talk.venue %}<em>{{ include.talk.venue | escape }}</em>{% endif %}
-    </p>
-  {% endif %}
-
-  {% if include.talk.location or include.talk.date %}
-    <p class="talk-entry__details">
-      {% if include.talk.location %}<span class="talk-entry__location">{{ include.talk.location | escape }}</span>{% endif %}
-      {% if include.talk.location and include.talk.date %}<span aria-hidden="true"> · </span>{% endif %}
-      {% if include.talk.date %}<time datetime="{{ include.talk.date | date_to_xmlschema }}">{{ include.talk.date | date: "%e %B %Y" }}</time>{% endif %}
+      {% if include.talk.location %}{% if include.talk.event or include.talk.venue %} · {% endif %}{{ include.talk.location | escape }}{% endif %}
+      {% if include.talk.date %}{% if include.talk.event or include.talk.venue or include.talk.location %} · {% endif %}<time datetime="{{ include.talk.date | date_to_xmlschema }}">{{ include.talk.date | date: "%e %B %Y" }}</time>{% endif %}
     </p>
   {% endif %}
 </article>
