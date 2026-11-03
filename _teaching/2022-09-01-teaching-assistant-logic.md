@@ -1,9 +1,9 @@
 ---
-title: "University of Trento"
+title: "Teaching Assistant (Logic)"
 collection: teaching
 show_on_page: true
 order: 1
-role: "Teaching Assistant (Logic)"
+role: "University of Trento"
 period: "Autumn 2022"
 location: "Trento, Italy"
 ---
