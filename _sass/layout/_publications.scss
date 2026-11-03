@@ -1,0 +1,58 @@
+/* ========================================================================
+   PUBLICATIONS
+   Compact, bibliography-inspired styling for the publications page.
+   ======================================================================== */
+
+.academic-list--publications {
+  .publication-section {
+    margin: 0 0 1.6em;
+  }
+
+  .publication-section__title {
+    margin: 1.35em 0 0.35em;
+    padding-bottom: 0.35em;
+    color: var(--global-text-color-light);
+    border-bottom: 1px solid var(--global-border-color);
+    font-size: $type-size-5;
+    font-weight: 600;
+    letter-spacing: 0.045em;
+  }
+
+  .publication-entry {
+    margin: 0;
+    padding: 0.55em 0 0.6em;
+    border-bottom: 1px solid var(--global-border-color);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .archive__item-title {
+      margin: 0 0 0.12em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: $type-size-6;
+      font-weight: 600;
+      line-height: 1.35;
+
+      a {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.15em;
+      }
+    }
+
+    .page__meta {
+      margin: 0;
+      color: var(--global-text-color-light);
+      font-size: $type-size- ย;
+      line-height: 1.45;
+    }
+  }
+
+  .publication-section:first-child .publication-section__title {
+    margin-top: 0.5em;
+  }
+
+  .publication-section:last-child {
+    margin-bottom: 0;
+  }
+}

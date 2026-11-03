@@ -10,18 +10,24 @@ author_profile: true
 {% assign in_progress = site.publications | where: "status", "in_progress" | sort: "title" %}
 
 <div class="academic-list academic-list--publications">
-  <h2>Published</h2>
-  {% for post in published %}
-    {% include publication-entry.html post=post %}
-  {% endfor %}
+  <section class="publication-section" aria-labelledby="published-heading">
+    <h2 class="publication-section__title" id="published-heading">Published</h2>
+    {% for post in published %}
+      {% include publication-entry.html post=post %}
+    {% endfor %}
+  </section>
 
-  <h2>Under review</h2>
-  {% for post in under_review %}
-    {% include publication-entry.html post=post %}
-  {% endfor %}
+  <section class="publication-section" aria-labelledby="under-review-heading">
+    <h2 class="publication-section__title" id="under-review-heading">Under review</h2>
+    {% for post in under_review %}
+      {% include publication-entry.html post=post %}
+    {% endfor %}
+  </section>
 
-  <h2>Work in progress</h2>
-  {% for post in in_progress %}
-    {% include publication-entry.html post=post %}
-  {% endfor %}
+  <section class="publication-section" aria-labelledby="in-progress-heading">
+    <h2 class="publication-section__title" id="in-progress-heading">Work in progress</h2>
+    {% for post in in_progress %}
+      {% include publication-entry.html post=post %}
+    {% endfor %}
+  </section>
 </div>
