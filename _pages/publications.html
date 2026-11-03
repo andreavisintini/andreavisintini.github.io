@@ -5,21 +5,23 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% assign published_publications = site.publications | where: "status", "published" | sort: "date" | reverse %}
-{% assign under_review_publications = site.publications | where: "status", "under_review" | sort: "title" %}
-{% assign works_in_progress = site.publications | where: "status", "in_progress" | sort: "title" %}
+{% assign published = site.publications | where: "status", "published" | sort: "date" | reverse %}
+{% assign under_review = site.publications | where: "status", "under_review" | sort: "title" %}
+{% assign in_progress = site.publications | where: "status", "in_progress" | sort: "title" %}
 
-<h2>Published</h2>
-{% for post in published_publications %}
-  {% include publication-entry.html post=post %}
-{% endfor %}
+<div class="academic-list academic-list--publications">
+  <h2>Published</h2>
+  {% for post in published %}
+    {% include publication-entry.html post=post %}
+  {% endfor %}
 
-<h2>Under review</h2>
-{% for post in under_review_publications %}
-  {% include publication-entry.html post=post %}
-{% endfor %}
+  <h2>Under review</h2>
+  {% for post in under_review %}
+    {% include publication-entry.html post=post %}
+  {% endfor %}
 
-<h2>Work in progress</h2>
-{% for post in works_in_progress %}
-  {% include publication-entry.html post=post %}
-{% endfor %}
+  <h2>Work in progress</h2>
+  {% for post in in_progress %}
+    {% include publication-entry.html post=post %}
+  {% endfor %}
+</div>
