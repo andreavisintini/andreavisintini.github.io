@@ -1,0 +1,8 @@
+<article class="archive__item teaching-entry">
+  <h3 class="archive__item-title">{{ include.post.title | escape }}</h3>
+  <p class="page__meta teaching-entry__meta">
+    {% if include.post.role %}<span class="teaching-entry__role">{{ include.post.role | escape }}</span>{% endif %}
+    {% if include.post.period %}<span class="teaching-entry__period">{% if include.post.role %} · {% endif %}{{ include.post.period | escape }}</span>{% endif %}
+    {% if include.post.location %}<span class="teaching-entry__location">{% if include.post.role or include.post.period %} · {% endif %}{{ include.post.location | escape }}</span>{% endif %}
+  </p>
+</article>

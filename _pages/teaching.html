@@ -5,18 +5,9 @@ permalink: /teaching/
 author_profile: true
 ---
 
+{% assign teaching_entries = site.teaching | where: "show_on_page", true | sort: "order" %}
 <div class="academic-list academic-list--teaching">
-  <div class="teaching-entry">
-    <h3 class="teaching-entry__title">University of Trento</h3>
-    <p class="teaching-entry__meta">Trento, Italy</p>
-    <p class="teaching-entry__role">TEACHING ASSISTANT (LOGIC)</p>
-    <p class="teaching-entry__period">Autumn 2022</p>
-  </div>
-
-  <div class="teaching-entry">
-    <h3 class="teaching-entry__title">University of Trento</h3>
-    <p class="teaching-entry__meta">Trento, Italy</p>
-    <p class="teaching-entry__role">LOGIC TUTOR &amp; GENERAL TUTOR</p>
-    <p class="teaching-entry__period">2022–2023</p>
-  </div>
+  {% for post in teaching_entries %}
+    {% include teaching-entry.html post=post %}
+  {% endfor %}
 </div>
