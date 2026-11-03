@@ -1,0 +1,16 @@
+<article class="archive__item publication-entry">
+  <h3 class="archive__item-title">
+    {% if include.post.link %}
+      <a href="{{ include.post.link }}">{{ include.post.title | escape }}</a>
+    {% else %}
+      {{ include.post.title | escape }}
+    {% endif %}
+  </h3>
+  {% if include.post.authors or include.post.venue or include.post.year %}
+    <p class="page__meta">
+      {% if include.post.authors %}{{ include.post.authors | escape }}{% endif %}
+      {% if include.post.venue %}{% if include.post.authors %}. {% endif %}<em>{{ include.post.venue | escape }}</em>{% endif %}
+      {% if include.post.year %}{% if include.post.authors or include.post.venue %}, {% endif %}{{ include.post.year }}{% endif %}
+    </p>
+  {% endif %}
+</article>

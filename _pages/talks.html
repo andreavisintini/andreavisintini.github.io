@@ -9,30 +9,10 @@ author_profile: true
   <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
 {% endif %}
 
-<div class="talks-list">
-  <h2>2026</h2>
-  <ul>
-    <li><strong>Invited — Five-dimensionalism and Negative Free Logic.</strong> <em>Logic in Philosophy</em>, IUC Dubrovnik, Croatia, 1–5 June 2026.</li>
-    <li><strong>Invited — 5DE.</strong> <em>Logic in Philosophy Summer School 2026</em>, Rijeka, Croatia (online), 18 September 2026.</li>
-    <li><strong>The Five-dimensional Ego.</strong> AMAMI — Mid-term SIFA Conference, Ca’ Foscari University of Venice, Italy, 1–3 September 2026.</li>
-    <li><strong>Actualist Five-dimensionalism.</strong> ECAP 12, University of Madrid, Spain, 24–28 August 2026.</li>
-    <li><strong>The Five-dimensional Ego.</strong> SILFS Triennial Conference, IUSS Pavia, Italy, 29 June–2 July 2026.</li>
-    <li><strong>The Five-dimensional Ego.</strong> 11th Annual Conference of the Society for the Metaphysics of Science, University of Toronto, Canada, 25–27 May 2026.</li>
-    <li><strong>Noneist Five-dimensionalism.</strong> <em>Issues on the (Im)Possible</em>, Comenius University Bratislava, Slovakia, 20–22 May 2026.</li>
-    <li><strong>Noneist Five-dimensionalism.</strong> Workshop on Platonism in Metaphysics and the Philosophy of Mathematics, Roma Tre University, Italy, 4–5 May 2026.</li>
-    <li><strong>Noneist Five-dimensionalism.</strong> Leeds Analytic Philosophy Graduate Conference, University of Leeds, UK, 20–22 April 2026.</li>
-    <li><strong>The Five-dimensional Ego.</strong> <em>Senses of Self</em>, University of Lisbon, Portugal, 11–13 March 2026.</li>
-  </ul>
-
-  <h2>2025</h2>
-  <ul>
-    <li><strong>Noneist Five-dimensionalism.</strong> FINO Graduate Conference on Mind, Science, and Language, University of Eastern Piedmont, Italy, 23 September 2025.</li>
-    <li><strong>Formal Semantics for a Noneist Theory of Modal Parts.</strong> Workshop on Modalities and Quantification in Reasoning, Central European University, Vienna, Austria, 18–19 September 2025.</li>
-    <li><strong>Formal Semantics for a Noneist Theory of Modal Parts.</strong> 16th Conference of the Italian Society for Analytic Philosophy, University of Turin, Italy, 27–29 August 2025.</li>
-  </ul>
-
-  <h2>2022</h2>
-  <ul>
-    <li><strong>Invited — The New Philosophy, “In a Nutshell”.</strong> Collegio Clesio, University of Trento, Italy, 30 November 2022.</li>
-  </ul>
-</div>
+{% assign talks_by_year = site.talks | sort: "date" | reverse | group_by_exp: "talk", "talk.date | date: '%Y'" %}
+{% for year in talks_by_year %}
+  <h2>{{ year.name }}</h2>
+  {% for talk in year.items %}
+    {% include talk-entry.html talk=talk %}
+  {% endfor %}
+{% endfor %}

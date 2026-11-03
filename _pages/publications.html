@@ -5,27 +5,21 @@ permalink: /publications/
 author_profile: true
 ---
 
-<div class="publication-list">
-  <h2>Published</h2>
-  <ul>
-    <li>
-      <strong>Conversation with Graham Priest</strong>, with Graham Priest. <em>APhEx</em> 30 (2024): 317–330.
-      <a href="https://www.aphex.it/index.php?option=com_content&view=article&id=715:conversation-with-graham-priest&catid=141&Itemid=329">Read the interview on APhEx</a>.
-    </li>
-  </ul>
+{% assign published_publications = site.publications | where: "status", "published" | sort: "date" | reverse %}
+{% assign under_review_publications = site.publications | where: "status", "under_review" | sort: "title" %}
+{% assign works_in_progress = site.publications | where: "status", "in_progress" | sort: "title" %}
 
-  <h2>Under review</h2>
-  <ul>
-    <li>Persistence and Unrestricted Composition</li>
-    <li>Actualist Five-dimensionalism</li>
-    <li>The Five-dimensional Ego</li>
-    <li>Realism in the Modal Desert</li>
-    <li>Transworld Temporal Persistence</li>
-    <li>Actualist Modal Realism</li>
-  </ul>
+<h2>Published</h2>
+{% for post in published_publications %}
+  {% include publication-entry.html post=post %}
+{% endfor %}
 
-  <h2>Work in progress</h2>
-  <ul>
-    <li><strong>Negative Free Logic for Five-dimensionalism</strong>, with E. Pavlović.</li>
-  </ul>
-</div>
+<h2>Under review</h2>
+{% for post in under_review_publications %}
+  {% include publication-entry.html post=post %}
+{% endfor %}
+
+<h2>Work in progress</h2>
+{% for post in works_in_progress %}
+  {% include publication-entry.html post=post %}
+{% endfor %}
